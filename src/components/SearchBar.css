@@ -11,6 +11,7 @@
     padding: 6px 10px;
     box-shadow: 2px 2px 10px #aaa;
     outline: none;
+    font-size: 16px;
 }
 
 .search-input::placeholder {

@@ -3,34 +3,36 @@ import BoardItem from "./BoardItem";
 import "./SelectedBoard.css";
 const apiKey = require("../apiKeys.json").riot;
 
-const SelectedBoard = (props) => {
+const SelectedBoard = (props) => {;
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const region = props.region;
 
   useEffect(() => {
+    const getData = () => {
+      return fetch(
+        `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
+      )
+        .then((response) => {
+          const respData = response.json();
+          console.log(respData);
+          return respData;
+        })
+        .then((response) => {
+          setData(response);
+          setIsPending(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    setData(null);
+    setIsPending(true);
     setTimeout(() => {
       getData();
     }, 1000);
-  }, []);
-
-  const getData = () => {
-    return fetch(
-      `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
-    )
-      .then((response) => {
-        const respData = response.json();
-        console.log(respData);
-        return respData;
-      })
-      .then((response) => {
-        setData(response);
-        setIsPending(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  }, [region]);
 
   return (
     <div className="board-container">
@@ -48,6 +50,8 @@ const SelectedBoard = (props) => {
                 key={entry.summonerId}
                 summonerName={entry.summonerName}
                 points={entry.leaguePoints}
+                wins={entry.wins}
+                losses={entry.losses}
               />
             ))}
       </ul>
