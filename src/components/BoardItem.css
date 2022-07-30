@@ -2,7 +2,8 @@
     background-color: #c0e0ff;
     border: 1px solid black;
     padding: 5px;
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
+}
+
+.board-item td {
+    padding: 5px 10px;
 }

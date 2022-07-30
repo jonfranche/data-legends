@@ -1,6 +1,8 @@
 .search-bar {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .search-input {
@@ -16,4 +18,10 @@
 
 .search-input::placeholder {
     color:#aaa
+}
+
+@media only screen and (max-width: 600px) {
+    .search-bar {
+        flex-direction: column;
+    }
 }

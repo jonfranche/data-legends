@@ -36,11 +36,13 @@ const SelectedBoard = (props) => {;
 
   return (
     <div className="board-container">
-      <ul className="board-list">
-        <li className="board-header">
-          <span>Summoner Name</span>
-          <span>League Points</span>
-        </li>
+      <table className="board-table">
+        <tr className="board-header">
+          <th>Summoner Name</th>
+          <th>League Points</th>
+          <th>Wins</th>
+          <th>Losses</th>
+        </tr>
         {isPending && <div className="loading">Loading...</div>}
         {data &&
           data.entries
@@ -54,7 +56,7 @@ const SelectedBoard = (props) => {;
                 losses={entry.losses}
               />
             ))}
-      </ul>
+      </table>
     </div>
   );
 };

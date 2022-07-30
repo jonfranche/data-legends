@@ -1,10 +1,12 @@
 import "./BoardItem.css";
 const BoardItem = (props) => {
   return (
-    <li className="board-item">
-      <span>{props.summonerName}</span>
-      <span>{props.points}</span>
-    </li>
+    <tr className="board-item">
+      <td>{props.summonerName}</td>
+      <td>{props.points}</td>
+      <td>{props.wins}</td>
+      <td>{props.losses}</td>
+    </tr>
   );
 };
 
