@@ -3,28 +3,30 @@ import BoardItem from "./BoardItem";
 import "./SelectedBoard.css";
 const apiKey = require("../apiKeys.json").riot;
 
-const SelectedBoard = (props) => {;
+const SelectedBoard = (props) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const region = props.region;
 
   useEffect(() => {
     const getData = () => {
-      return fetch(
-        `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
-      )
-        .then((response) => {
-          const respData = response.json();
-          console.log(respData);
-          return respData;
-        })
-        .then((response) => {
-          setData(response);
-          setIsPending(false);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      if (region !== "") {
+        return fetch(
+          `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
+        )
+          .then((response) => {
+            const respData = response.json();
+            console.log(respData);
+            return respData;
+          })
+          .then((response) => {
+            setData(response);
+            setIsPending(false);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     };
 
     setData(null);
@@ -43,7 +45,9 @@ const SelectedBoard = (props) => {;
           <th>Wins</th>
           <th>Losses</th>
         </tr>
-        {isPending && <div className="loading">Loading...</div>}
+        {isPending && region !== "" && (
+          <div className="loading">Loading...</div>
+        )}
         {data &&
           data.entries
             .sort((a, b) => (a.leaguePoints > b.leaguePoints ? -1 : 1))
