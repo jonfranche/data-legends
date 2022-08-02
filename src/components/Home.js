@@ -1,5 +1,3 @@
-import SearchBar from "./SearchBar";
-import Leaderboard from "./Leaderboard";
 import "./Home.css";
 const Home = () => {
   return (
@@ -8,8 +6,6 @@ const Home = () => {
         <h1>Welcome to Data Legends!</h1>
         <p>Search Summoner data or view the Challenger leaderboard</p>
       </div>
-      <SearchBar />
-      <Leaderboard />
     </div>
   );
 };

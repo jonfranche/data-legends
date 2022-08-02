@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -6,10 +7,10 @@ const Navbar = () => {
         <nav className="nav-bar">
             
             <ul className="nav-list">
-                <li className="title"><a href="#home">Data Legends</a></li>
-                <li className="nav-item"><a href="#league">League of Legends</a></li>
-                <li className="nav-item"><a href="#tft">TFT</a></li>
-                <li className="nav-item"><a href="#about">About</a></li>
+                <li className="title"><NavLink to="/">Data Legends</NavLink></li>
+                <li className="nav-item"><NavLink to="/lol" >League of Legends</NavLink></li>
+                <li className="nav-item"><NavLink to="/tft">TFT</NavLink></li>
+                <li className="nav-item"><NavLink to="/about">About</NavLink></li>
             </ul>
         </nav>
     )

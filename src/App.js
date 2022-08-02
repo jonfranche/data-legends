@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react";
-
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import "./App.css";
+import NavBar from "./components/Navbar";
+import LeagueOfLegends from "./components/LeagueOfLegends";
+import TeamFightTactics from "./components/TeamFightTactics";
+import About from "./components/About";
+import Home from "./components/Home";
+import SummonerProfile from "./components/SummonerProfile";
 
 const App = () => {
-  return(
-    <div>
-      <Navbar />
-      <Home/>
-    </div>
-  )
-}
+  return (
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route path="/lol" element={<LeagueOfLegends />} />
+            <Route path="/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
+          <Route path="/tft" element={<TeamFightTactics />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
