@@ -1,0 +1,9 @@
+.board-item {
+    background-color: #c0e0ff;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.board-item td {
+    padding: 5px 10px;
+}

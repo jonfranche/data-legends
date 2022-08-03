@@ -1,0 +1,50 @@
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-list li {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+}
+
+.nav-list a:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.nav-list a:link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.nav-item:hover,
+.title:hover {
+    color: #f8e74a;
+}
+
+.nav-bar {
+    background-color: #006AD4;
+    color: #fff;
+    text-shadow: #000;
+}
+
+.title {
+    background-color: #004fB4;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
+    }
+}

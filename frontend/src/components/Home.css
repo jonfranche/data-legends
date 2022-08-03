@@ -1,0 +1,16 @@
+.welcome {
+    text-align: center;
+    padding: 5px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome h1 {
+        font-size: 25px;
+    }
+}
