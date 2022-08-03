@@ -33,13 +33,14 @@ const SummonerProfile = () => {
     }, 1000);
   }, [params.region, params.summonerName]);
 
+  // TODO: use the summonerId from the response to fetch summoner's League data
   return (
     <div>
       <h2>
         Summoner Profile: {params.summonerName} Region: {params.region}
       </h2>
       {isPending && (<div>Loading...</div>)}
-      {data && <h3>{data.summonerLevel}</h3>}
+      {data && <h3>Summoner Level: {data.summonerLevel}</h3>}
     </div>
   );
 };
