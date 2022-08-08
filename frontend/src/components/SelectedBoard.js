@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BoardItem from "./BoardItem";
 import "./SelectedBoard.css";
-const apiKey = require("../apiKeys.json").riot;
 
 const SelectedBoard = (props) => {
   const [data, setData] = useState(null);
