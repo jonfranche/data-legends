@@ -12,7 +12,8 @@ const SelectedBoard = (props) => {
     const getData = () => {
       if (region !== "") {
         return fetch(
-          `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
+          // `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
+          `/lol/leaderboard/${region}`
         )
           .then((response) => {
             const respData = response.json();
