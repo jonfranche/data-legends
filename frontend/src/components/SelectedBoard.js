@@ -10,10 +10,7 @@ const SelectedBoard = (props) => {
   useEffect(() => {
     const getData = () => {
       if (region !== "") {
-        return fetch(
-          // `https://${region}.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`
-          `/lol/leaderboard/${region}`
-        )
+        return fetch(`/lol/leaderboard/${region}`)
           .then((response) => {
             const respData = response.json();
             console.log(respData);
@@ -38,28 +35,28 @@ const SelectedBoard = (props) => {
 
   return (
     <div className="board-container">
+      {isPending && region !== "" && <div className="loading">Loading...</div>}
       <table className="board-table">
-        <tr className="board-header">
-          <th>Summoner Name</th>
-          <th>League Points</th>
-          <th>Wins</th>
-          <th>Losses</th>
-        </tr>
-        {isPending && region !== "" && (
-          <div className="loading">Loading...</div>
-        )}
-        {data &&
-          data.entries
-            .sort((a, b) => (a.leaguePoints > b.leaguePoints ? -1 : 1))
-            .map((entry) => (
-              <BoardItem
-                key={entry.summonerId}
-                summonerName={entry.summonerName}
-                points={entry.leaguePoints}
-                wins={entry.wins}
-                losses={entry.losses}
-              />
-            ))}
+        <tbody>
+          <tr className="board-header">
+            <th>Summoner Name</th>
+            <th>League Points</th>
+            <th>Wins</th>
+            <th>Losses</th>
+          </tr>
+          {data &&
+            data.entries
+              .sort((a, b) => (a.leaguePoints > b.leaguePoints ? -1 : 1))
+              .map((entry) => (
+                <BoardItem
+                  key={entry.summonerId}
+                  summonerName={entry.summonerName}
+                  points={entry.leaguePoints}
+                  wins={entry.wins}
+                  losses={entry.losses}
+                />
+              ))}
+        </tbody>
       </table>
     </div>
   );

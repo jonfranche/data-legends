@@ -8,6 +8,7 @@ import TeamFightTactics from "./components/TeamFightTactics";
 import About from "./components/About";
 import Home from "./components/Home";
 import SummonerProfile from "./components/SummonerProfile";
+import Leaderboard from "./components/Leaderboard";
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
       <div>
         <NavBar />
         <Routes>
-          <Route path="/lol" element={<LeagueOfLegends />} />
-            <Route path="/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
+          <Route path="/lol" element={<LeagueOfLegends />}/>
+            <Route path="/lol/leaderboard" element={<Leaderboard />} />
+            <Route path="/lol/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
           <Route path="/tft" element={<TeamFightTactics />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
