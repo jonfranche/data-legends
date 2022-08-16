@@ -34,6 +34,7 @@ const SearchBar = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (summonerId !== "") {
+      console.log(props.game);
       navigate(`/${props.game}/summoner/${region}/${summonerId}`);
     }
     

@@ -44,7 +44,7 @@ const Leaderboard = (props) => {
           ))}
         </select>
       </div>
-      {regionSelected && <SelectedBoard region={selected} />}
+      {regionSelected && <SelectedBoard region={selected} game={props.game}/>}
     </div>
   );
 };

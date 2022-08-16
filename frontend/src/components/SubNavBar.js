@@ -11,7 +11,7 @@ const SubNavBar = (props) => {
           )}
         </li>
         <li className="sub-nav-item">
-          <SearchBar />
+          <SearchBar game={props.game}/>
         </li>
       </ul>
     </nav>

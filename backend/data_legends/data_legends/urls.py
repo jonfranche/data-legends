@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('lol/', include('league_of_legends.urls')),
+    path('tft/', include('tft.urls')),
     path('admin/', admin.site.urls),
 ]
