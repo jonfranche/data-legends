@@ -2,7 +2,7 @@ import "./SearchBar.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const regions = [
     { text: "NA", value: "na1" },
     { text: "BR", value: "br1" },
@@ -34,7 +34,7 @@ const SearchBar = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (summonerId !== "") {
-      navigate(`/lol/summoner/${region}/${summonerId}`);
+      navigate(`/${props.game}/summoner/${region}/${summonerId}`);
     }
     
   };

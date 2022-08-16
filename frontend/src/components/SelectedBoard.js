@@ -13,7 +13,6 @@ const SelectedBoard = (props) => {
         return fetch(`/lol/leaderboard/${region}`)
           .then((response) => {
             const respData = response.json();
-            console.log(respData);
             return respData;
           })
           .then((response) => {
@@ -39,6 +38,7 @@ const SelectedBoard = (props) => {
       <table className="board-table">
         <tbody>
           <tr className="board-header">
+            <th>Rank</th>
             <th>Summoner Name</th>
             <th>League Points</th>
             <th>Wins</th>
@@ -47,15 +47,18 @@ const SelectedBoard = (props) => {
           {data &&
             data.entries
               .sort((a, b) => (a.leaguePoints > b.leaguePoints ? -1 : 1))
-              .map((entry) => (
-                <BoardItem
-                  key={entry.summonerId}
-                  summonerName={entry.summonerName}
-                  points={entry.leaguePoints}
-                  wins={entry.wins}
-                  losses={entry.losses}
-                />
-              ))}
+              .map((entry, index) => {
+                return (
+                  <BoardItem
+                    key={entry.summonerId}
+                    rank={index + 1}
+                    summonerName={entry.summonerName}
+                    points={entry.leaguePoints}
+                    wins={entry.wins}
+                    losses={entry.losses}
+                  />
+                );
+              })}
         </tbody>
       </table>
     </div>

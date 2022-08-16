@@ -31,8 +31,7 @@
     padding: 10px 0px;
 }
 
-.nav-item:hover,
-.title:hover {
+.nav-list-item:hover {
     color: #f8e74a;
 }
 

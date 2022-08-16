@@ -17,11 +17,11 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/lol" element={<LeagueOfLegends />}/>
-            <Route path="/lol/leaderboard" element={<Leaderboard />} />
-            <Route path="/lol/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
+            <Route path="/:game/leaderboard" element={<Leaderboard game="lol"/>} />
+            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
           <Route path="/tft" element={<TeamFightTactics />} />
-            <Route path="/tft/leaderboard" element={<Leaderboard />} />
-            <Route path="/tft/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
+            <Route path="/:game/leaderboard" element={<Leaderboard game="tft"/>} />
+            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>

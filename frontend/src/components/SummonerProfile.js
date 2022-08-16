@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import LeagueSubNavbar from "./LeagueSubNavBar";
+import SubNavBar from "./SubNavBar";
 
 
 const SummonerProfile = () => {
@@ -8,12 +8,12 @@ const SummonerProfile = () => {
   const [isPending, setIsPending] = useState(true);
   let params = useParams();
 
-  console.log(`/lol/summoner?region=${params.region}&name=${params.summonerName}`)
+  console.log(`/${params.game}/summoner?region=${params.region}&name=${params.summonerName}`)
 
   useEffect(() => {
     const getData = () => {
       return fetch(
-        `/lol/summoner/${params.region}/${params.summonerName}`)
+        `/${params.game}/summoner/${params.region}/${params.summonerName}`)
         .then((response) => {
           const respData = response.json();
           console.log(respData);
@@ -33,12 +33,12 @@ const SummonerProfile = () => {
     setTimeout(() => {
       getData();
     }, 1000);
-  }, [params.region, params.summonerName]);
+  }, [params.region, params.summonerName, params.game]);
 
   // TODO: use the summonerId from the response to fetch summoner's League data
   return (
     <div>
-      <LeagueSubNavbar />
+      <SubNavBar game={params.game} leaderboardActive={false}/>
       <h2>
         Summoner Profile: {params.summonerName} Region: {params.region}
       </h2>

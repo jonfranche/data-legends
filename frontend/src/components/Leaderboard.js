@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SelectedBoard from "./SelectedBoard";
 import "./Leaderboard.css";
-import LeagueSubNavBar from "./LeagueSubNavBar";
+import SubNavBar from "./SubNavBar";
 
-const Leaderboard = () => {
+const Leaderboard = (props) => {
   const regions = [
     { text: "--Choose a region--", value: "" },
     { text: "Brazil", value: "br1" },
@@ -29,7 +29,7 @@ const Leaderboard = () => {
 
   return (
     <div className="leaderboard-container">
-      <LeagueSubNavBar />
+      <SubNavBar game={props.game} leaderboardActive={true}/>
       <div className="leaderboard">
         <h2 className="leaderboard-title">Leaderboard</h2>
         <select

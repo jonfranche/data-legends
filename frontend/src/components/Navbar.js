@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
         <li className="nav-list-item">
           <NavLink
-            to="/lol"
+            to="lol"
             className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
           >
             League of Legends
@@ -26,7 +26,7 @@ const Navbar = () => {
         </li>
         <li className="nav-list-item">
           <NavLink
-            to="/tft"
+            to="tft"
             className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
           >
             TFT
@@ -34,7 +34,7 @@ const Navbar = () => {
         </li>
         <li className="nav-list-item">
           <NavLink
-            to="/about"
+            to="about"
             className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
           >
             About

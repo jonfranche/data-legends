@@ -6,8 +6,8 @@ const LeagueOfLegends = () => {
     <div className="home">
       <div className="welcome">
         <h2>League of Legends</h2>
-        <p>View the <Link to="/lol/leaderboard">Leaderboards</Link> or Search for a Summoner:</p>
-        <SearchBar />
+        <p>View the <Link to="leaderboard">Leaderboards</Link> or Search for a Summoner:</p>
+        <SearchBar game="lol"/>
       </div>
     </div>
   );
