@@ -30,7 +30,7 @@ const SelectedBoard = (props) => {
     setTimeout(() => {
       getData();
     }, 1000);
-  }, [region]);
+  }, [props.game, region]);
 
   return (
     <div className="board-container">

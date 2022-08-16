@@ -5,7 +5,6 @@ import "./App.css";
 import NavBar from "./components/Navbar";
 import LeagueOfLegends from "./components/LeagueOfLegends";
 import TeamFightTactics from "./components/TeamFightTactics";
-import About from "./components/About";
 import Home from "./components/Home";
 import SummonerProfile from "./components/SummonerProfile";
 import Leaderboard from "./components/Leaderboard";
@@ -22,7 +21,6 @@ const App = () => {
           <Route path="/tft" element={<TeamFightTactics />} />
             <Route path="/tft/leaderboard" element={<Leaderboard game="tft"/>} />
             <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile game="tft"/>}/>
-          <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </div>

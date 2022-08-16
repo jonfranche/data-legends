@@ -32,14 +32,6 @@ const Navbar = () => {
             TFT
           </NavLink>
         </li>
-        <li className="nav-list-item">
-          <NavLink
-            to="about"
-            className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
-          >
-            About
-          </NavLink>
-        </li>
       </ul>
     </nav>
   );

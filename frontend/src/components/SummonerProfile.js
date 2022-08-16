@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SubNavBar from "./SubNavBar";
-
+import RankedStats from "./RankedStats";
+import "./SummonerProfile.css";
 
 const SummonerProfile = () => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   let params = useParams();
 
-  console.log(`/${params.game}/summoner?region=${params.region}&name=${params.summonerName}`)
-
   useEffect(() => {
     const getData = () => {
       return fetch(
-        `/${params.game}/summoner/${params.region}/${params.summonerName}`)
+        `/${params.game}/summoner/${params.region}/${params.summonerName}`
+      )
         .then((response) => {
           const respData = response.json();
-          console.log(respData);
           return respData;
         })
         .then((response) => {
@@ -37,13 +36,14 @@ const SummonerProfile = () => {
 
   // TODO: use the summonerId from the response to fetch summoner's League data
   return (
-    <div>
-      <SubNavBar game={params.game} leaderboardActive={false}/>
+    <div className="summoner-profile-container">
+      <SubNavBar game={params.game} leaderboardActive={false} />
       <h2>
-        Summoner Profile: {params.summonerName} Region: {params.region}
+        {params.summonerName}
       </h2>
-      {isPending && (<div>Loading...</div>)}
-      {data && <div>{JSON.stringify(data[0])}</div>}
+      {isPending && <div>Loading...</div>}
+      {data && data.length === 0 && <div>There is no Ranked data for this profile</div>}
+      {data && <RankedStats stats={data[0]}/>}
     </div>
   );
 };
