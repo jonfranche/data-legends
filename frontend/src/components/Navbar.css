@@ -11,13 +11,12 @@
     display: block;
     text-align: center;
     font-weight: 700;
-    padding: 14px 16px;
     text-decoration: none;
     float: left;
 }
 
 .nav-list a:visited {
-    text-decoration: none;
+    text-decoration: none;  
     color: inherit;
     cursor: pointer;
 }
@@ -26,6 +25,10 @@
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+}
+
+.nav-list-item {
+    padding: 10px 0px;
 }
 
 .nav-item:hover,
@@ -39,8 +42,13 @@
     text-shadow: #000;
 }
 
-.title {
+.nav-item {
+    padding: 10px 16px;
+}
+
+.nav-item-active {
     background-color: #006AD4;
+    padding: 10px 16px;
 }
 
 @media only screen and (max-width: 600px) {

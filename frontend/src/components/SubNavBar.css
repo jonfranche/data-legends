@@ -5,13 +5,14 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    align-items: center;
 }
 
 .sub-nav-list li {
     display: block;
     text-align: center;
     font-weight: 700;
-    padding: 14px 16px;
+    padding: 5px 10px;
     text-decoration: none;
     float: left;
 }
