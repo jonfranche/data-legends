@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import LeagueSubNavbar from "./LeagueSubNavBar";
 
 
 const SummonerProfile = () => {
@@ -37,6 +38,7 @@ const SummonerProfile = () => {
   // TODO: use the summonerId from the response to fetch summoner's League data
   return (
     <div>
+      <LeagueSubNavbar />
       <h2>
         Summoner Profile: {params.summonerName} Region: {params.region}
       </h2>

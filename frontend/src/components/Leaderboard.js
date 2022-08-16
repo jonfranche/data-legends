@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SelectedBoard from "./SelectedBoard";
-import './Leaderboard.css'
+import "./Leaderboard.css";
+import LeagueSubNavBar from "./LeagueSubNavBar";
 
 const Leaderboard = () => {
   const regions = [
@@ -19,18 +20,23 @@ const Leaderboard = () => {
   ];
 
   const [regionSelected, setRegionSelected] = useState(false);
-  const [selected, setSelected] = useState(regions[0].value)
+  const [selected, setSelected] = useState(regions[0].value);
 
-  const onRegionSelect = e => {
+  const onRegionSelect = (e) => {
     setSelected(e.target.value);
     setRegionSelected(true);
-  }
+  };
 
   return (
     <div className="leaderboard-container">
+      <LeagueSubNavBar />
       <div className="leaderboard">
         <h2 className="leaderboard-title">Leaderboard</h2>
-        <select className="leaderboard-dropdown"value={selected} onChange={onRegionSelect}>
+        <select
+          className="leaderboard-dropdown"
+          value={selected}
+          onChange={onRegionSelect}
+        >
           {regions.map((region) => (
             <option key={region.value} value={region.value}>
               {region.text}
@@ -38,7 +44,7 @@ const Leaderboard = () => {
           ))}
         </select>
       </div>
-      {regionSelected && <SelectedBoard region={selected}/>}
+      {regionSelected && <SelectedBoard region={selected} />}
     </div>
   );
 };

@@ -34,7 +34,7 @@ const SearchBar = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (summonerId !== "") {
-      navigate(`/summoner/${region}/${summonerId}`);
+      navigate(`/lol/summoner/${region}/${summonerId}`);
     }
     
   };

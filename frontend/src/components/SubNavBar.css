@@ -1,4 +1,4 @@
-.nav-list {
+.sub-nav-list {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.nav-list li {
+.sub-nav-list li {
     display: block;
     text-align: center;
     font-weight: 700;
@@ -16,35 +16,30 @@
     float: left;
 }
 
-.nav-list a:visited {
+.sub-nav-list a:visited {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
 }
 
-.nav-list a:link {
+.sub-nav-list a:link {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
 }
 
-.nav-item:hover,
-.title:hover {
+.sub-nav-item:hover {
     color: #f8e74a;
 }
 
-.nav-bar {
-    background-color: #004fB4;
+.sub-nav-bar {
+    background-color: #006AD4;
     color: #fff;
     text-shadow: #000;
 }
 
-.title {
-    background-color: #006AD4;
-}
-
 @media only screen and (max-width: 600px) {
-    .nav-list {
+    .sub-nav-list {
         flex-direction: column;
     }
 }

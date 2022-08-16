@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import "./SubNavBar.css";
 const LeagueSubNavbar = () => {
-    // TODO: make Leaderboard to link to another page to view Leaderboard
   return (
-    <nav className="nav-bar">
-      <ul className="nav-list">
-        <li className="title">
+    <nav className="sub-nav-bar">
+      <ul className="sub-nav-list">
+        <li className="sub-nav-item">
           <NavLink to="/lol/leaderboard">Leaderboard</NavLink>
         </li>
-        <li className="nav-item">
+        <li className="sub-nav-item">
           <SearchBar />
         </li>
       </ul>

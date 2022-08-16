@@ -1,16 +1,14 @@
-import SearchBar from "./SearchBar";
-import Leaderboard from "./Leaderboard";
+import { Link } from "react-router-dom";
 import "./Home.css";
-import LeagueSubNavbar from "./LeagueSubNavBar";
+import SearchBar from "./SearchBar";
 const LeagueOfLegends = () => {
   return (
     <div className="home">
-        <LeagueSubNavbar />
       <div className="welcome">
-        <h2>Search A Summoner's Profile: </h2>
+        <h2>League of Legends</h2>
+        <p>View the <Link to="/lol/leaderboard">Leaderboards</Link> or Search for a Summoner:</p>
+        <SearchBar />
       </div>
-      <SearchBar />
-      <Leaderboard />
     </div>
   );
 };
