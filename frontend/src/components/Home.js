@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 import "./Home.css";
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
           <Link to="/lol">League of Legends</Link> or <Link to="/tft">Team Fight Tactics</Link>
         </p>
       </div>
+      <Footer />
     </div>
   );
 };

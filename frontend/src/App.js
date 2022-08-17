@@ -12,7 +12,7 @@ import Leaderboard from "./components/Leaderboard";
 const App = () => {
   return (
     <Router>
-      <div>
+      <div id="app">
         <NavBar />
         <Routes>
           <Route path="/lol" element={<LeagueOfLegends />}/>

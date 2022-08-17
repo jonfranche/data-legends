@@ -1,11 +1,14 @@
 .welcome {
+    height: 100%;
     text-align: center;
     padding: 5px;
 }
 
 .home {
+    height: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     flex-direction: column;
 }
 

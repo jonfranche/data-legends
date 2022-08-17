@@ -7,12 +7,17 @@ const RankedStats = (props) => {
   return (
     <div className="ranked-stats-container">
       {stats && (
-        <div>
+        <div style={{ fontWeight: 700 }}>
+          <h3 style={{ textDecoration: 'underline' }}>Solo/Duo Queue Ranked Stats</h3>
           <p>
-            Rank: {stats.tier} {stats.rank} Points: {stats.leaguePoints}
+            Rank: {stats.tier} {stats.rank} 
           </p>
           <p>
-            Wins: {stats.wins} Losses: {stats.losses}
+            Points: {stats.leaguePoints}
+          </p>
+          <p>
+            Wins: <span style={{ color: "green" }}>{stats.wins}</span> Losses:{" "}
+            <span style={{ color: "red" }}>{stats.losses}</span>
           </p>
         </div>
       )}

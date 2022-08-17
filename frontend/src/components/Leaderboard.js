@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SelectedBoard from "./SelectedBoard";
-import "./Leaderboard.css";
 import SubNavBar from "./SubNavBar";
+import Footer from "./Footer";
+import "./Leaderboard.css";
 
 const Leaderboard = (props) => {
   const regions = [
@@ -43,8 +44,9 @@ const Leaderboard = (props) => {
             </option>
           ))}
         </select>
+        {regionSelected && <SelectedBoard region={selected} game={props.game}/>}
       </div>
-      {regionSelected && <SelectedBoard region={selected} game={props.game}/>}
+      <Footer />
     </div>
   );
 };

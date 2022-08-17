@@ -54,4 +54,9 @@
     .nav-list {
         flex-direction: column;
     }
+
+    .nav-list-item {
+        background-color: #006AD4;
+        width: 100%;
+    }
 }

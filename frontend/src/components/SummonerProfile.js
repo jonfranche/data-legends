@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SubNavBar from "./SubNavBar";
 import RankedStats from "./RankedStats";
+import Footer from "./Footer";
 import "./SummonerProfile.css";
 
 const SummonerProfile = () => {
@@ -38,12 +39,15 @@ const SummonerProfile = () => {
   return (
     <div className="summoner-profile-container">
       <SubNavBar game={params.game} leaderboardActive={false} />
-      <h2>
-        {params.summonerName}
-      </h2>
-      {isPending && <div>Loading...</div>}
-      {data && data.length === 0 && <div>There is no Ranked data for this profile</div>}
-      {data && <RankedStats stats={data[0]}/>}
+      <div className="summoner-info-container">
+        <h2>{params.summonerName}</h2>
+        {isPending && <div>Loading...</div>}
+        {data && data.length === 0 && (
+          <div>There is no Ranked data for this profile</div>
+        )}
+        {data && <RankedStats stats={data[0]} />}
+      </div>
+      <Footer />
     </div>
   );
 };

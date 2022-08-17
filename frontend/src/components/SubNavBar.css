@@ -37,6 +37,7 @@
     background-color: #006AD4;
     color: #fff;
     text-shadow: #000;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {

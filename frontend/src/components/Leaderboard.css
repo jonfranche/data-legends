@@ -4,10 +4,11 @@
 }
 
 .leaderboard {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
     align-items: center;
+    overflow: auto;
 }
 
 .leaderboard select {
@@ -21,7 +22,9 @@
 }
 
 .leaderboard-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
