@@ -8,6 +8,7 @@ import TeamFightTactics from "./components/TeamFightTactics";
 import Home from "./components/Home";
 import SummonerProfile from "./components/SummonerProfile";
 import Leaderboard from "./components/Leaderboard";
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/tft/leaderboard" element={<Leaderboard game="tft"/>} />
             <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile game="tft"/>}/>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </Router>
