@@ -13,7 +13,7 @@ const SummonerProfile = () => {
   useEffect(() => {
     const getData = () => {
       return fetch(
-        `/${params.game}/summoner/${params.region}/${params.summonerName}`
+        `/api/${params.game}/summoner/${params.region}/${params.summonerName}`
       )
         .then((response) => {
           const respData = response.json();

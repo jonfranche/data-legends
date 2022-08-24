@@ -10,7 +10,7 @@ const SelectedBoard = (props) => {
   useEffect(() => {
     const getData = () => {
       if (region !== "") {
-        return fetch(`/${props.game}/leaderboard/${region}`)
+        return fetch(`/api/${props.game}/leaderboard/${region}`)
           .then((response) => {
             const respData = response.json();
             return respData;

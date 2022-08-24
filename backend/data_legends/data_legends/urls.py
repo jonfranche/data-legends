@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('lol/', include('league_of_legends.urls')),
-    path('tft/', include('tft.urls')),
+    path('api/lol/', include('league_of_legends.urls')),
+    path('api/tft/', include('tft.urls')),
     path('admin/', admin.site.urls),
 ]
