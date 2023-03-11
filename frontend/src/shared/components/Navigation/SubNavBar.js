@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./SubNavBar.css";
 const SubNavBar = (props) => {
   const navlink = `/${props.game}/leaderboard`

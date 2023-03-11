@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import SubNavBar from "./SubNavBar";
-import Footer from "./Footer";
+import SearchBar from "../../shared/components/SearchBar/SearchBar";
+import SubNavBar from "../../shared/components/Navigation/SubNavBar";
+import Footer from "../../shared/components/Footer";
 
 const TeamFightTactics = () => {
   return (

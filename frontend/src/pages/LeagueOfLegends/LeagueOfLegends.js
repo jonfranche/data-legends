@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
-import SearchBar from "./SearchBar";
-import Footer from "./Footer";
-import SubNavBar from "./SubNavBar";
+import "../Home/Home.css";
+import SearchBar from "../../shared/components/SearchBar/SearchBar";
+import Footer from "../../shared/components/Footer";
+import SubNavBar from "../../shared/components/Navigation/SubNavBar";
 const LeagueOfLegends = () => {
   return (
     <div className="home">

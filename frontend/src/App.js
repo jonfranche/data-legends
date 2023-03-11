@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import "./App.css";
-import NavBar from "./components/Navbar";
-import LeagueOfLegends from "./components/LeagueOfLegends";
-import TeamFightTactics from "./components/TeamFightTactics";
-import Home from "./components/Home";
-import SummonerProfile from "./components/SummonerProfile";
-import Leaderboard from "./components/Leaderboard";
-import PageNotFound from "./components/PageNotFound";
+import NavBar from "./shared/components/Navigation/Navbar";
+import LeagueOfLegends from "./pages/LeagueOfLegends/LeagueOfLegends";
+import TeamFightTactics from "./pages/TeamFightTactics/TeamFightTactics";
+import Home from "./pages/Home/Home";
+import SummonerProfile from "./pages/SummonerProfile/SummonerProfile";
+import Leaderboard from "./pages/Leaderboard/Leaderboard";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 const App = () => {
   return (
