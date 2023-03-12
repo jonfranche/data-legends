@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectedBoard from "./SelectedBoard";
-import SubNavBar from "./SubNavBar";
-import Footer from "./Footer";
+import SubNavBar from "../../shared/components/Navigation/SubNavBar";
+import Footer from "../../shared/components/Footer";
 import "./Leaderboard.css";
 
 const Leaderboard = (props) => {

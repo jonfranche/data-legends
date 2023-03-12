@@ -10,7 +10,7 @@ dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, '../.env')
 load_dotenv(filename)
 
-API_KEY = os.getenv('RIOT_API')
+API_KEY = os.getenv('TFT_API')
 
 tft_watcher = TftWatcher(API_KEY)
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import SubNavBar from "./SubNavBar";
+import SubNavBar from "../../shared/components/Navigation/SubNavBar";
 import RankedStats from "./RankedStats";
-import Footer from "./Footer";
+import Footer from "../../shared/components/Footer";
 import "./SummonerProfile.css";
 
 const SummonerProfile = () => {
