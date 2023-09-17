@@ -1,7 +1,19 @@
 import React from "react";
 import "./RankedStats.css";
 
-const RankedStats = (props) => {
+interface RankedStatsProps {
+  stats: Stats;
+}
+
+interface Stats {
+  tier: string;
+  rank: string;
+  leaguePoints: number;
+  wins: number;
+  losses: number;
+}
+
+const RankedStats = (props: RankedStatsProps) => {
   const stats = props.stats;
 
   return (

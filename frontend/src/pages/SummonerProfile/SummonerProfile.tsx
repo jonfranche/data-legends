@@ -5,8 +5,21 @@ import RankedStats from "./RankedStats";
 import Footer from "../../shared/components/Footer";
 import "./SummonerProfile.css";
 
+interface Data {
+  [index: number]: DataEntry;
+  length: number;
+}
+
+interface DataEntry {
+  tier: string;
+  rank: string;
+  leaguePoints: number;
+  wins: number;
+  losses: number;
+}
+
 const SummonerProfile = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<Data | null>(null);
   const [isPending, setIsPending] = useState(true);
   let params = useParams();
 

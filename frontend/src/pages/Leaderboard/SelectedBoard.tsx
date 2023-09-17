@@ -4,7 +4,7 @@ import "./SelectedBoard.css";
 
 interface SelectedBoardProps {
   region: string;
-  game: string;
+  game: "lol" | "tft";
 }
 
 interface Data {
