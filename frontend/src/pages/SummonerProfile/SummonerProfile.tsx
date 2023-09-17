@@ -18,10 +18,16 @@ interface DataEntry {
   losses: number;
 }
 
+interface Params {
+  region: string;
+  summonerName: string;
+  game: "lol" | "tft"
+}
+
 const SummonerProfile = () => {
   const [data, setData] = useState<Data | null>(null);
   const [isPending, setIsPending] = useState(true);
-  let params = useParams();
+  let params = useParams<keyof Params>() as Params;
 
   useEffect(() => {
     const getData = () => {
