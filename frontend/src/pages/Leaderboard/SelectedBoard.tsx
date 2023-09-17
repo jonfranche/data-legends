@@ -2,8 +2,26 @@ import React, { useState, useEffect } from "react";
 import BoardItem from "./BoardItem";
 import "./SelectedBoard.css";
 
-const SelectedBoard = (props) => {
-  const [data, setData] = useState(null);
+interface SelectedBoardProps {
+  region: string;
+  game: string;
+}
+
+interface Data {
+  entries: Array<DataEntry>;
+}
+
+interface DataEntry {
+  rank: number;
+  summonerName: string;
+  summonerId: string;
+  leaguePoints: number;
+  wins: number;
+  losses: number;
+}
+
+const SelectedBoard = (props: SelectedBoardProps) => {
+  const [data, setData] = useState<Data | null>(null);
   const [isPending, setIsPending] = useState(true);
   const region = props.region;
 
@@ -47,11 +65,11 @@ const SelectedBoard = (props) => {
           {data &&
             data.entries
               .sort((a, b) => (a.leaguePoints > b.leaguePoints ? -1 : 1))
-              .map((entry, index) => {
+              .map((entry, index: number) => {
                 return (
                   <BoardItem
                     key={entry.summonerId}
-                    rank={index + 1}
+                    rank={index++}
                     summonerName={entry.summonerName}
                     points={entry.leaguePoints}
                     wins={entry.wins}
