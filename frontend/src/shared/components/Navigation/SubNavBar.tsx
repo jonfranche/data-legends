@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import "./SubNavBar.css";
-const SubNavBar = (props) => {
+
+interface SubNavBarProps {
+  game: "lol" | "tft"
+  leaderboardActive?: boolean;
+}
+
+const SubNavBar = (props: SubNavBarProps) => {
   const navlink = `/${props.game}/leaderboard`
   return (
     <nav className="sub-nav-bar">
