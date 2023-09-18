@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import SelectedBoard from "./SelectedBoard";
 import SubNavBar from "../../shared/components/Navigation/SubNavBar";
 import Footer from "../../shared/components/Footer";
 import "./Leaderboard.css";
 
-const Leaderboard = (props) => {
+interface LeaderboardProps {
+  game: "lol" | "tft";
+}
+
+const Leaderboard = (props: LeaderboardProps) => {
   const regions = [
     { text: "--Choose a region--", value: "" },
     { text: "Brazil", value: "br1" },
@@ -23,8 +27,9 @@ const Leaderboard = (props) => {
   const [regionSelected, setRegionSelected] = useState(false);
   const [selected, setSelected] = useState(regions[0].value);
 
-  const onRegionSelect = (e) => {
-    setSelected(e.target.value);
+  const onRegionSelect = (e: SyntheticEvent) => {
+    let target = e.target as HTMLInputElement;
+    setSelected(target.value);
     setRegionSelected(true);
   };
 

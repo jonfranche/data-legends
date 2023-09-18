@@ -1,6 +1,10 @@
 import "./Button.css";
 
-const Button = (props) => {
+interface ButtonProps {
+  text: string;
+}
+
+const Button = (props: ButtonProps) => {
   return <button className="button">{props.text}</button>;
 };
 

@@ -5,10 +5,29 @@ import RankedStats from "./RankedStats";
 import Footer from "../../shared/components/Footer";
 import "./SummonerProfile.css";
 
+interface Data {
+  [index: number]: DataEntry;
+  length: number;
+}
+
+interface DataEntry {
+  tier: string;
+  rank: string;
+  leaguePoints: number;
+  wins: number;
+  losses: number;
+}
+
+interface Params {
+  region: string;
+  summonerName: string;
+  game: "lol" | "tft"
+}
+
 const SummonerProfile = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<Data | null>(null);
   const [isPending, setIsPending] = useState(true);
-  let params = useParams();
+  let params = useParams<keyof Params>() as Params;
 
   useEffect(() => {
     const getData = () => {

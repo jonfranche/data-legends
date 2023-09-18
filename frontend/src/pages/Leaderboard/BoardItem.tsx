@@ -1,5 +1,15 @@
+import React from "react";
 import "./BoardItem.css";
-const BoardItem = (props) => {
+
+interface BoardItemProps {
+  rank: number;
+  summonerName: string;
+  points: number;
+  wins: number;
+  losses: number;
+}
+
+const BoardItem = (props: BoardItemProps) => {
   return (
     <tr className="board-item">
       <td>{props.rank}</td>

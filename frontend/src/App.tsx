@@ -18,10 +18,10 @@ const App = () => {
         <Routes>
           <Route path="/lol" element={<LeagueOfLegends />}/>
             <Route path="/lol/leaderboard" element={<Leaderboard game="lol"/>} />
-            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile game="lol"/>}/>
+            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
           <Route path="/tft" element={<TeamFightTactics />} />
             <Route path="/tft/leaderboard" element={<Leaderboard game="tft"/>} />
-            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile game="tft"/>}/>
+            <Route path="/:game/summoner/:region/:summonerName" element={<SummonerProfile/>}/>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
