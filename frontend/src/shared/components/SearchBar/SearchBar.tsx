@@ -1,8 +1,12 @@
 import "./SearchBar.css";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = (props) => {
+interface SearchBarProps {
+  game: "lol" | "tft";
+}
+
+const SearchBar = (props: SearchBarProps) => {
   const regions = [
     { text: "NA", value: "na1" },
     { text: "BR", value: "br1" },
@@ -21,23 +25,23 @@ const SearchBar = (props) => {
   const [summonerId, setSummonerId] = useState("");
   const navigate = useNavigate();
 
-  const onRegionSelect = (e) => {
+  const onRegionSelect = (e: SyntheticEvent) => {
     e.preventDefault();
-    setRegion(e.target.value);
+    let target = e.target as HTMLInputElement;
+    setRegion(target.value);
   };
 
-  const setSummonerHandler = (e) => {
+  const setSummonerHandler = (e: SyntheticEvent) => {
     e.preventDefault();
-    setSummonerId(e.target.value);
+    let target = e.target as HTMLInputElement;
+    setSummonerId(target.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: SyntheticEvent) => {
     e.preventDefault();
     if (summonerId !== "") {
-      console.log(props.game);
       navigate(`/${props.game}/summoner/${region}/${summonerId}`);
     }
-    
   };
 
   return (
